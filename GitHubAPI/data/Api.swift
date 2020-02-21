@@ -26,34 +26,36 @@ class Api<T: Decodable> {
     
     // MARK: - Mehods
     
-    func request(with urlString: ApiDefinitions.Endpoint, method: ApiDefinitions.Method, completion: @escaping ApiCompletion) {
-        guard let url = URL(string: urlString.rawValue)  else {
+    func request(with urlString: ApiDefinitions.Base, method: ApiDefinitions.Method, completion: @escaping ApiCompletion) {
+        
+        if let url = URL(string: "https://api.github.com/users/joaofelipe88/repos") {
+            var urlRequest = URLRequest(url: url)
+            urlRequest = urlRequest.defaultJsonRequest()
+            urlRequest.setHttpMethod(method)
+            remoteTask = URLSession.shared.dataTask(with: urlRequest) { data, _ , error in
+                guard let dataReceived = data else {
+                    DispatchQueue.main.async {
+                        completion(.error(CustomError(msg: self.errorMessage)))
+                    }
+                    return
+                }
+                do {
+                    
+                    let objectResponse = try JSONDecoder().decode(T.self, from: dataReceived)
+                    DispatchQueue.main.async {
+                        completion(.success(objectResponse))
+                    }
+                    return
+                } catch {
+                    DispatchQueue.main.async {
+                        completion(.error(CustomError(msg: self.errorMessage)))
+                    }
+                    return
+                }
+            }
+            remoteTask.resume()
+        } else {
             completion(.error(CustomError(msg: self.errorMessage)))
-            return
         }
-        var urlRequest = URLRequest(url: url)
-        urlRequest = urlRequest.defaultJsonRequest()
-        urlRequest.setHttpMethod(method)
-        remoteTask = URLSession.shared.dataTask(with: urlRequest) { data, _ , error in
-            guard let dataReceived = data else {
-                DispatchQueue.main.async {
-                    completion(.error(CustomError(msg: self.errorMessage)))
-                }
-                return
-            }
-            do {
-                let objectResponse = try JSONDecoder().decode(T.self, from: dataReceived)
-                DispatchQueue.main.async {
-                    completion(.success(objectResponse))
-                }
-                return
-            } catch {
-                DispatchQueue.main.async {
-                    completion(.error(CustomError(msg: self.errorMessage)))
-                }
-                return
-            }
-        }
-        remoteTask.resume()
     }
 }
