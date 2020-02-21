@@ -13,8 +13,6 @@ protocol HomeViewControllerProtocol: class {
     var presenter: HomePresenterProtocol! { get set }
     
     // PRESENTER -> VIEW
-    func showRepoList(with repos: [RepositoryModel])
-    
     func showError(with message: String)
     
     func showLoading()
@@ -35,7 +33,7 @@ protocol HomePresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func getRepoList(username: String?)
+    func getRepoList(_ username: String?)
 }
 
 protocol HomeInteractorOutputProtocol: class {

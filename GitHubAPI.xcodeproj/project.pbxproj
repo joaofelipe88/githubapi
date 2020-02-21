@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		121B2C70D14959FB5111E1D2 /* Pods_GitHubAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05575C9112240C75CC2B2664 /* Pods_GitHubAPI.framework */; };
+		3706DFAE24004B2600A8A9CB /* ProfileDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3706DFAD24004B2600A8A9CB /* ProfileDetailTests.swift */; };
 		372F22BC23FF9E4E003ABB02 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22AA23FF9E4E003ABB02 /* RepositoryModel.swift */; };
 		372F22BD23FF9E4E003ABB02 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22AB23FF9E4E003ABB02 /* OwnerModel.swift */; };
 		372F22BE23FF9E4E003ABB02 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22AE23FF9E4E003ABB02 /* HomeInteractor.swift */; };
@@ -25,6 +26,7 @@
 		372F22CC23FFA195003ABB02 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22CB23FFA195003ABB02 /* ProfileDetailViewController.swift */; };
 		372F22CE23FFAC4F003ABB02 /* ReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22CD23FFAC4F003ABB02 /* ReposTableViewCell.swift */; };
 		372F22D023FFBDDA003ABB02 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22CF23FFBDDA003ABB02 /* ResponseError.swift */; };
+		372F22D8240030CF003ABB02 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22D7240030CF003ABB02 /* HomeViewTests.swift */; };
 		374FFE3123FDC01A00FA1C3F /* GitHubAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374FFE3023FDC01A00FA1C3F /* GitHubAPITests.swift */; };
 		374FFE4F23FE069300FA1C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374FFE4623FE069200FA1C3F /* LaunchScreen.storyboard */; };
 		374FFE5023FE069300FA1C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374FFE4723FE069200FA1C3F /* Assets.xcassets */; };
@@ -49,6 +51,7 @@
 /* Begin PBXFileReference section */
 		047E828E06B568B58FF1312E /* Pods-GitHubAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubAPITests.release.xcconfig"; path = "Target Support Files/Pods-GitHubAPITests/Pods-GitHubAPITests.release.xcconfig"; sourceTree = "<group>"; };
 		05575C9112240C75CC2B2664 /* Pods_GitHubAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3706DFAD24004B2600A8A9CB /* ProfileDetailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailTests.swift; sourceTree = "<group>"; };
 		372F22AA23FF9E4E003ABB02 /* RepositoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 		372F22AB23FF9E4E003ABB02 /* OwnerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
 		372F22AE23FF9E4E003ABB02 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		372F22CB23FFA195003ABB02 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
 		372F22CD23FFAC4F003ABB02 /* ReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewCell.swift; sourceTree = "<group>"; };
 		372F22CF23FFBDDA003ABB02 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		372F22D7240030CF003ABB02 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		374FFE1623FDC01700FA1C3F /* GitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374FFE2C23FDC01A00FA1C3F /* GitHubAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		374FFE3023FDC01A00FA1C3F /* GitHubAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPITests.swift; sourceTree = "<group>"; };
@@ -174,6 +178,22 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		372F22D124002E30003ABB02 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				372F22D7240030CF003ABB02 /* HomeViewTests.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		372F22D224002E38003ABB02 /* profileDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3706DFAD24004B2600A8A9CB /* ProfileDetailTests.swift */,
+			);
+			path = profileDetail;
+			sourceTree = "<group>";
+		};
 		374FFE0D23FDC01700FA1C3F = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +231,8 @@
 		374FFE2F23FDC01A00FA1C3F /* GitHubAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				372F22D124002E30003ABB02 /* home */,
+				372F22D224002E38003ABB02 /* profileDetail */,
 				374FFE3023FDC01A00FA1C3F /* GitHubAPITests.swift */,
 				374FFE3223FDC01A00FA1C3F /* Info.plist */,
 			);
@@ -480,6 +502,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				374FFE3123FDC01A00FA1C3F /* GitHubAPITests.swift in Sources */,
+				372F22D8240030CF003ABB02 /* HomeViewTests.swift in Sources */,
+				3706DFAE24004B2600A8A9CB /* ProfileDetailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +681,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 3URLZEFDTH;
 				INFOPLIST_FILE = GitHubAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
@@ -680,6 +705,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = 3URLZEFDTH;
 				INFOPLIST_FILE = GitHubAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;

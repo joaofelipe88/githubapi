@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: UITextField!
     var presenter: HomePresenterProtocol!
-    var repoList: [RepositoryModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +20,11 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func searchAction(_ sender: Any) {
-        self.presenter.getRepoList(username: usernameTextField.text)
+        self.presenter.getRepoList(usernameTextField.text)
     }
-
 }
 
 extension HomeViewController: HomeViewControllerProtocol {
-    
-    func showRepoList(with repos: [RepositoryModel]) {
-        repoList = repos
-    }
     
     func showError(with message: String) {
         showErrorAlert(message)

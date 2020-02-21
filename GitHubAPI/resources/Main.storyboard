@@ -115,7 +115,7 @@
         <!--GitHub Viewer-->
         <scene sceneID="CvI-9S-XVd">
             <objects>
-                <viewController id="x19-xC-juU" customClass="HomeViewController" customModule="GitHubAPI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" id="x19-xC-juU" customClass="HomeViewController" customModule="GitHubAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yc5-yz-uEu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
