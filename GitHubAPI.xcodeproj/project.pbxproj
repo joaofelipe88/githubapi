@@ -22,8 +22,10 @@
 		372F22C723FF9E4E003ABB02 /* ProfileDetailWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22B923FF9E4E003ABB02 /* ProfileDetailWireFrame.swift */; };
 		372F22C823FF9E4E003ABB02 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22BB23FF9E4E003ABB02 /* Protocols.swift */; };
 		372F22CA23FF9E72003ABB02 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22C923FF9E72003ABB02 /* UIViewController+Extension.swift */; };
+		372F22CC23FFA195003ABB02 /* ProfileDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22CB23FFA195003ABB02 /* ProfileDetailViewController.swift */; };
+		372F22CE23FFAC4F003ABB02 /* ReposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22CD23FFAC4F003ABB02 /* ReposTableViewCell.swift */; };
+		372F22D023FFBDDA003ABB02 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F22CF23FFBDDA003ABB02 /* ResponseError.swift */; };
 		374FFE3123FDC01A00FA1C3F /* GitHubAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374FFE3023FDC01A00FA1C3F /* GitHubAPITests.swift */; };
-		374FFE4E23FE069300FA1C3F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 374FFE4423FE069200FA1C3F /* Info.plist */; };
 		374FFE4F23FE069300FA1C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374FFE4623FE069200FA1C3F /* LaunchScreen.storyboard */; };
 		374FFE5023FE069300FA1C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374FFE4723FE069200FA1C3F /* Assets.xcassets */; };
 		374FFE5123FE069300FA1C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374FFE4823FE069200FA1C3F /* Main.storyboard */; };
@@ -61,6 +63,9 @@
 		372F22B923FF9E4E003ABB02 /* ProfileDetailWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDetailWireFrame.swift; sourceTree = "<group>"; };
 		372F22BB23FF9E4E003ABB02 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		372F22C923FF9E72003ABB02 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		372F22CB23FFA195003ABB02 /* ProfileDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailViewController.swift; sourceTree = "<group>"; };
+		372F22CD23FFAC4F003ABB02 /* ReposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposTableViewCell.swift; sourceTree = "<group>"; };
+		372F22CF23FFBDDA003ABB02 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		374FFE1623FDC01700FA1C3F /* GitHubAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374FFE2C23FDC01A00FA1C3F /* GitHubAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		374FFE3023FDC01A00FA1C3F /* GitHubAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPITests.swift; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 			children = (
 				372F22AA23FF9E4E003ABB02 /* RepositoryModel.swift */,
 				372F22AB23FF9E4E003ABB02 /* OwnerModel.swift */,
+				372F22CF23FFBDDA003ABB02 /* ResponseError.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -153,7 +159,9 @@
 			isa = PBXGroup;
 			children = (
 				372F22B823FF9E4E003ABB02 /* ProfileDetailProtocols.swift */,
+				372F22CB23FFA195003ABB02 /* ProfileDetailViewController.swift */,
 				372F22B923FF9E4E003ABB02 /* ProfileDetailWireFrame.swift */,
+				372F22CD23FFAC4F003ABB02 /* ReposTableViewCell.swift */,
 			);
 			path = profileDetail;
 			sourceTree = "<group>";
@@ -268,6 +276,7 @@
 				374FFE1223FDC01700FA1C3F /* Sources */,
 				374FFE1323FDC01700FA1C3F /* Frameworks */,
 				374FFE1423FDC01700FA1C3F /* Resources */,
+				1D9254048690D574077757F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,7 +350,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374FFE4E23FE069300FA1C3F /* Info.plist in Resources */,
 				374FFE5023FE069300FA1C3F /* Assets.xcassets in Resources */,
 				374FFE4F23FE069300FA1C3F /* LaunchScreen.storyboard in Resources */,
 				374FFE5123FE069300FA1C3F /* Main.storyboard in Resources */,
@@ -373,6 +381,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHubAPITests/Pods-GitHubAPITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D9254048690D574077757F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubAPI/Pods-GitHubAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GitHubAPI/Pods-GitHubAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GitHubAPI/Pods-GitHubAPI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDA8D9BC86A70707FF847642 /* [CP] Check Pods Manifest.lock */ = {
@@ -432,10 +457,13 @@
 				372F22BC23FF9E4E003ABB02 /* RepositoryModel.swift in Sources */,
 				372F22C223FF9E4E003ABB02 /* HomeRemoteDataManager.swift in Sources */,
 				374FFE5A23FE10F800FA1C3F /* Api.swift in Sources */,
+				372F22D023FFBDDA003ABB02 /* ResponseError.swift in Sources */,
 				372F22C323FF9E4E003ABB02 /* HomeProtocols.swift in Sources */,
 				372F22C123FF9E4E003ABB02 /* HomePresenter.swift in Sources */,
 				372F22BF23FF9E4E003ABB02 /* HomeViewController.swift in Sources */,
+				372F22CC23FFA195003ABB02 /* ProfileDetailViewController.swift in Sources */,
 				372F22BD23FF9E4E003ABB02 /* OwnerModel.swift in Sources */,
+				372F22CE23FFAC4F003ABB02 /* ReposTableViewCell.swift in Sources */,
 				372F22C623FF9E4E003ABB02 /* ProfileDetailProtocols.swift in Sources */,
 				372F22C423FF9E4E003ABB02 /* AppDelegate.swift in Sources */,
 				374FFE5C23FE117B00FA1C3F /* ApiDefinitions.swift in Sources */,
@@ -588,7 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 3URLZEFDTH;
-				INFOPLIST_FILE = GitHubAPI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubAPI/supportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,7 +637,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 3URLZEFDTH;
-				INFOPLIST_FILE = GitHubAPI/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubAPI/supportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -7,6 +7,9 @@ target 'GitHubAPI' do
 
   # Pods for GitHubAPI
 
+  pod 'PKHUD', '~> 5.0'
+  pod 'Kingfisher'
+
   target 'GitHubAPITests' do
     inherit! :search_paths
     # Pods for testing

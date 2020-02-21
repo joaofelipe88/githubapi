@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class HomeViewController: UIViewController {
 
@@ -36,11 +37,11 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func showLoading() {
-//        HUD.show(.progress)
+        HUD.show(.progress)
     }
     
     func hideLoading() {
-//        HUD.hide()
+        HUD.hide()
     }
     
 }

@@ -14,7 +14,7 @@ class HomeRemoteDataManager: HomeRemoteDataManagerInputProtocol {
     
     func retrieveRepoList(_ username: String) {
         
-        Api<[RepositoryModel]>().request(with: .home, method: .get) { result in
+        Api<[RepositoryModel]>().request(with: username, urlString: .home, endPoint: .repos, method: .get) { result in
             switch result {
                 case .success(let repos):
                     self.remoteRequestHandler?.onReposRetrieved(repos)
