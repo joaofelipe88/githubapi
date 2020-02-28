@@ -12,11 +12,11 @@ struct RepositoryModel: Codable {
 
     var name: String?
     var language: String?
-//    var owner: OwnerModel?
+    var owner: OwnerModel?
     
     private enum CodingKeys: String, CodingKey {
         case name
         case language
-//        case owner
+        case owner
     }
 }

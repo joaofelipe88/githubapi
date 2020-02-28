@@ -15,18 +15,11 @@ class ProfileDetailWireFrame: ProfileDetailWireFrameProtocol {
     }
     
     class func createProfileDetailModule(forRepos repos: [RepositoryModel]) -> UIViewController {
-//        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileDetail")
-//        if let view = viewController as? ProfileDetailViewController {
-//            let presenter: ProfileDetailPresenterProtocol = ProfileDetailPresenter()
-//            let wireFrame: ProfileDetailWireFrameProtocol = ProfileDetailWireFrame()
-//
-//            view.presenter = presenter
-//            presenter.view = view
-//            presenter.repos = repos
-//            presenter.wireFrame = wireFrame
-//
-//            return viewController
-//        }
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "ProfileDetailView")
+        if let view = viewController as? ProfileDetailViewController {
+            view.showRepoList(with: repos)
+            return view
+        }
         return UIViewController()
     }
 }

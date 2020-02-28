@@ -13,11 +13,11 @@ class HomePresenter: HomePresenterProtocol {
     var wireFrame: HomeWireFrameProtocol?
     
     func viewDidLoad() {
-        view?.showLoading()
     }
     
     func getRepoList(username: String?) {
         if let string = username {
+            view?.showLoading()
             interactor?.retrieveRepoList(username: string)
         }
     }

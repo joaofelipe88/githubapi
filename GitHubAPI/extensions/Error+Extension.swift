@@ -10,7 +10,6 @@ import UIKit
 
 struct CustomError: Error {
     let msg: String
-    
 }
 
 extension CustomError: LocalizedError {

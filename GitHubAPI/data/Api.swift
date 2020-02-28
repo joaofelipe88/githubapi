@@ -26,9 +26,10 @@ class Api<T: Decodable> {
     
     // MARK: - Mehods
     
-    func request(with urlString: ApiDefinitions.Base, method: ApiDefinitions.Method, completion: @escaping ApiCompletion) {
+    func request(with params: String, urlString: ApiDefinitions.Base, endPoint: ApiDefinitions.Endpoint, method: ApiDefinitions.Method, completion: @escaping ApiCompletion) {
         
-        if let url = URL(string: "https://api.github.com/users/joaofelipe88/repos") {
+        let urlComplete = urlString.rawValue+params+endPoint.rawValue
+        if let url = URL(string: urlComplete) {
             var urlRequest = URLRequest(url: url)
             urlRequest = urlRequest.defaultJsonRequest()
             urlRequest.setHttpMethod(method)
@@ -40,17 +41,28 @@ class Api<T: Decodable> {
                     return
                 }
                 do {
-                    
                     let objectResponse = try JSONDecoder().decode(T.self, from: dataReceived)
                     DispatchQueue.main.async {
                         completion(.success(objectResponse))
                     }
                     return
                 } catch {
-                    DispatchQueue.main.async {
-                        completion(.error(CustomError(msg: self.errorMessage)))
+                    do {
+                        let objectResponse = try JSONDecoder().decode(ResponseError.self, from: dataReceived)
+                        DispatchQueue.main.async {
+                            if let msg = objectResponse.message, msg.lowercased() == "not found" {
+                                completion(.error(CustomError(msg: "User not found. Please enter another name")))
+                            } else {
+                                completion(.error(CustomError(msg: objectResponse.message ?? "Something went wrong on fetching data")))
+                            }
+                        }
+                        return
+                    } catch let error {
+                        DispatchQueue.main.async {
+                            completion(.error(CustomError(msg: error.localizedDescription)))
+                        }
+                        return
                     }
-                    return
                 }
             }
             remoteTask.resume()
