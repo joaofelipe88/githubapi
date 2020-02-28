@@ -15,7 +15,7 @@ class HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
     }
     
-    func getRepoList(username: String?) {
+    func getRepoList(_ username: String?) {
         if let string = username {
             view?.showLoading()
             interactor?.retrieveRepoList(username: string)

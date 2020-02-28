@@ -17,7 +17,7 @@ class ProfileDetailViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     var repoList: [RepositoryModel] = []
-    var imageUrl: URL?
+    var imageString: String = ""
     var login: String!
     
     override func viewDidLoad() {
@@ -26,16 +26,16 @@ class ProfileDetailViewController: UIViewController {
     }
     
     func setupView() {
-        if let url = self.imageUrl {
+        if !imageString.isEmpty, let imageUrl = URL(string: imageString) {
             userImageView.layer.masksToBounds = false
             userImageView.layer.cornerRadius = userImageView.frame.height/2
             userImageView.clipsToBounds = true
-            userImageView.kf.setImage(with: url)
+            userImageView.kf.setImage(with: imageUrl)
             userImageView.kf.indicatorType = .activity
         }
         
-        if let text = self.login {
-            usernameLabel.text = text
+        if !self.login.isEmpty {
+            usernameLabel.text = self.login
         } else {
             usernameLabel.text = "unknown"
         }
@@ -48,8 +48,8 @@ extension ProfileDetailViewController: ProfileDetailViewControllerProtocol {
         
         repoList = repos
         
-        if let image = repos.first?.owner?.avatarUrl, !image.isEmpty, let imageUrl = URL(string: image) {
-            self.imageUrl = imageUrl
+        if let string = repos.first?.owner?.avatarUrl {
+            self.imageString = string
         }
         
         if let login = repos.first?.owner?.login {
